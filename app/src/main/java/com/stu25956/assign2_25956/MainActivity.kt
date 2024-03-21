@@ -1,4 +1,4 @@
-package com.example.assign2_25956
+package com.stu25956.assign2_25956
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,7 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.assign2_25956.ui.theme.Assign2_25956Theme
+import com.stu25956.assign2_25956.ui.theme.Assign2_25956Theme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

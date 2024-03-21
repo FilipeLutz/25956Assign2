@@ -1,4 +1,4 @@
-package com.example.assign2_25956
+package com.stu25956.assign2_25956
 
 import org.junit.Test
 

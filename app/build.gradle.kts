@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.assign2_25956"
+    namespace = "com.stu25956.assign2_25956"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.assign2_25956"
+        applicationId = "com.stu25956.assign2_25956"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

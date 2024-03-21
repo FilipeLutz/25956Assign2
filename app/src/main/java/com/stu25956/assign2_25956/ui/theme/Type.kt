@@ -1,4 +1,4 @@
-package com.example.assign2_25956.ui.theme
+package com.stu25956.assign2_25956.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
