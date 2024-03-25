@@ -24,7 +24,6 @@ fun Navigation() {
             if(arg != null)
                 id = arg.toInt()
             val movie = MoviesData.movieList.find { it.id == id}
-            //val movie = DataProvider.movieList.find { it.name == id}
             if(movie != null)
                 MovieScreen(movie,navController = navController)
         }

@@ -43,9 +43,8 @@ fun MovieScreen(movie: Movie, navController: NavController) {
             modifier = Modifier
                 .size(width = 40.dp, height = 20.dp)
                 .clickable {
-                    /* Back To Home Screen*/
+                    // Back To Home Screen
                     navController.navigate(Routes.FirstScreen.route)
-                    //   Log.d("TAG", movie.seats_remaining.toString() + " | " + movie.seats_selected.toString())
                 })
         Image(painter = painterResource(id = movie.image) ,
             contentDescription = "A movie cover",

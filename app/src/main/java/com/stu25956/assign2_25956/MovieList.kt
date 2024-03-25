@@ -20,8 +20,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.stu25956.assign2_25956.ui.theme.Assign2_25956Theme
 
 @Composable
 private fun Image(movie: Movie) {
@@ -32,7 +35,7 @@ private fun Image(movie: Movie) {
         modifier = Modifier
             .padding(8.dp)
             .size(84.dp)
-            .clip(RoundedCornerShape(corner = CornerSize(16.dp)))
+            .clip(RoundedCornerShape(corner = CornerSize(12.dp))),
     )
 }
 
@@ -44,35 +47,59 @@ fun MovieList(movie: Movie, navController: NavController) {
             .padding(horizontal = 8.dp, vertical = 8.dp)
             .fillMaxWidth()
             .clickable {
-                navController.navigate(Routes.SecondScreen.route + "/" + movie.id) },
-        shape = RoundedCornerShape(corner = CornerSize(16.dp))
+                navController.navigate(Routes.SecondScreen.route + "/" + movie.id)
+            },
+        shape = RoundedCornerShape(corner = CornerSize(12.dp))
     ) {
         Row {
             Image(movie)
             Column(
                 modifier = Modifier
-                    .padding(16.dp)
+                    .padding(top = (10.dp))
                     .fillMaxWidth(),
-                verticalArrangement = Arrangement.Center) {
+                verticalArrangement = Arrangement.SpaceEvenly) {
 
-                Text(text = movie.name, style = MaterialTheme.typography.titleMedium, fontFamily = FontFamily.Serif)
+                Text(
+                    text = movie.name,
+                    style = MaterialTheme.typography.titleMedium,
+                    fontFamily = FontFamily.Default,
+                    fontWeight = FontWeight.Bold)
+
+                Image(
+                    painter = painterResource(movie.certification),
+                    contentDescription = null)
+
+                Text(
+                    text = movie.runningTimeMins.toString() + " mins",
+                    style = MaterialTheme.typography.bodyMedium,
+                    fontFamily = FontFamily.Default)
+
                 if(movie.seatsSelected > 0)
                 {
-                    Text(text = movie.seatsSelected.toString() + " seats selected !",
+                    Text(text = movie.seatsSelected.toString() + " Seats selected",
                         style = MaterialTheme.typography.bodyMedium,
-                        fontFamily = FontFamily.Serif,
-                        color = Color.Green
+                        fontFamily = FontFamily.Default,
+                        color = Color.Black
                     )
                 }
                 else {
                     Text(
-                        text = movie.seatsRemaining.toString() + " seats remaining !",
+                        text = movie.seatsRemaining.toString() + " Seats remaining",
                         style = MaterialTheme.typography.bodyMedium,
-                        fontFamily = FontFamily.Serif,
-                        color = Color.White
+                        fontFamily = FontFamily.Default,
+                        color = Color.Red,
+                        fontWeight = FontWeight.SemiBold
                     )
                 }
             }
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun Preview() {
+    Assign2_25956Theme {
+        Navigation()
     }
 }
