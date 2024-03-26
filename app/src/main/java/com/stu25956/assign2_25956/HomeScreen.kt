@@ -38,12 +38,13 @@ fun Home(navController: NavController) {
                     titleContentColor = Color.LightGray
                 ),
                 title = {
-                    Text("WHAT'S ON ",
+                    Text("M O V I E S",
                         modifier = Modifier
                             .fillMaxWidth(),
                         textAlign = TextAlign.Center,
                         fontWeight = FontWeight.Bold,
-                        fontFamily = FontFamily.Monospace)
+                        fontFamily = FontFamily.SansSerif
+                    )
                 },
             )
         },
@@ -67,7 +68,7 @@ fun Home(navController: NavController) {
         LazyColumn(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.padding(top = 70.dp, start = 5.dp, end = 5.dp)
+            modifier = Modifier.padding(top = 74.dp, start = 5.dp, end = 5.dp)
         ) {
             this.items(
                 items = movies,

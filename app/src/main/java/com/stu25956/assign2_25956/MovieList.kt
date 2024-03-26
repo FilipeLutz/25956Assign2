@@ -5,9 +5,12 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
@@ -21,10 +24,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.stu25956.assign2_25956.ui.theme.Assign2_25956Theme
 
 @Composable
 private fun Image(movie: Movie) {
@@ -44,7 +45,7 @@ fun MovieList(movie: Movie, navController: NavController) {
 
     Card(
         modifier = Modifier
-            .padding(horizontal = 8.dp, vertical = 8.dp)
+            .padding(horizontal = 8.dp, vertical = 5.dp)
             .fillMaxWidth()
             .clickable {
                 navController.navigate(Routes.SecondScreen.route + "/" + movie.id)
@@ -55,30 +56,43 @@ fun MovieList(movie: Movie, navController: NavController) {
             Image(movie)
             Column(
                 modifier = Modifier
-                    .padding(top = (10.dp))
+                    .padding(top = (15.dp))
                     .fillMaxWidth(),
                 verticalArrangement = Arrangement.SpaceEvenly) {
 
-                Text(
-                    text = movie.name,
-                    style = MaterialTheme.typography.titleMedium,
-                    fontFamily = FontFamily.Default,
-                    fontWeight = FontWeight.Bold)
+                Row {
+                    Text(
+                        text = movie.name,
+                        style = MaterialTheme.typography.titleMedium,
+                        fontFamily = FontFamily.Default,
+                        fontWeight = FontWeight.Bold
+                    )
 
-                Image(
-                    painter = painterResource(movie.certification),
-                    contentDescription = null)
+                    Spacer(modifier = Modifier.width(5.dp))
+
+                    Image(
+                        modifier = Modifier.padding(top = 4.dp),
+                        painter = painterResource(movie.certification),
+                        contentDescription = null
+                    )
+                }
+
+                Spacer(modifier = Modifier.height(6.dp))
 
                 Text(
-                    text = movie.runningTimeMins.toString() + " mins",
-                    style = MaterialTheme.typography.bodyMedium,
-                    fontFamily = FontFamily.Default)
+                    text = "Run Time: " + (movie.runningTimeMins / 60).toString() + "hr " + (movie.runningTimeMins % 60).toString() + "mins",
+                    style = MaterialTheme.typography.bodySmall,
+                    fontFamily = FontFamily.SansSerif,
+                    fontWeight = FontWeight.SemiBold,
+                    color = Color.Gray)
+
+                Spacer(modifier = Modifier.height(6.dp))
 
                 if(movie.seatsSelected > 0)
                 {
                     Text(text = movie.seatsSelected.toString() + " Seats selected",
                         style = MaterialTheme.typography.bodyMedium,
-                        fontFamily = FontFamily.Default,
+                        fontFamily = FontFamily.SansSerif,
                         color = Color.Black
                     )
                 }
@@ -86,20 +100,12 @@ fun MovieList(movie: Movie, navController: NavController) {
                     Text(
                         text = movie.seatsRemaining.toString() + " Seats remaining",
                         style = MaterialTheme.typography.bodyMedium,
-                        fontFamily = FontFamily.Default,
+                        fontFamily = FontFamily.SansSerif,
                         color = Color.Red,
                         fontWeight = FontWeight.SemiBold
                     )
                 }
             }
         }
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun Preview() {
-    Assign2_25956Theme {
-        Navigation()
     }
 }
