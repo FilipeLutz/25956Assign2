@@ -18,7 +18,7 @@ object MoviesData {
             id = 0,
         ),
         Movie(
-            name = "GHOSTBUSTERS: FROZEN EMPIRE",
+            name = "GHOSTBUSTERS",
             image = R.drawable.ghostbusters_poster,
             certification = R.drawable.cert_12a,
             description = "In Ghostbusters: Frozen Empire, the Spengler family returns to where it all started – the iconic New York City firehouse – " +

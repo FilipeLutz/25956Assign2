@@ -45,7 +45,7 @@ fun MovieList(movie: Movie, navController: NavController) {
 
     Card(
         modifier = Modifier
-            .padding(horizontal = 8.dp, vertical = 5.dp)
+            .padding(horizontal = 5.dp, vertical = 5.dp)
             .fillMaxWidth()
             .clickable {
                 navController.navigate(Routes.SecondScreen.route + "/" + movie.id)
@@ -56,7 +56,7 @@ fun MovieList(movie: Movie, navController: NavController) {
             Image(movie)
             Column(
                 modifier = Modifier
-                    .padding(top = (15.dp))
+                    .padding(top = (15.dp), end = 5.dp)
                     .fillMaxWidth(),
                 verticalArrangement = Arrangement.SpaceEvenly) {
 
@@ -68,10 +68,10 @@ fun MovieList(movie: Movie, navController: NavController) {
                         fontWeight = FontWeight.Bold
                     )
 
-                    Spacer(modifier = Modifier.width(5.dp))
+                    Spacer(modifier = Modifier.width(7.dp))
 
                     Image(
-                        modifier = Modifier.padding(top = 4.dp),
+                        modifier = Modifier.padding(top = 2.dp),
                         painter = painterResource(movie.certification),
                         contentDescription = null
                     )
