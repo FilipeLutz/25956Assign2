@@ -68,7 +68,7 @@ fun Home(navController: NavController) {
         LazyColumn(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.padding(top = 74.dp, start = 5.dp, end = 5.dp)
+            modifier = Modifier.padding(top = 73.dp, start = 5.dp, end = 5.dp, bottom = 85.dp)
         ) {
             this.items(
                 items = movies,
