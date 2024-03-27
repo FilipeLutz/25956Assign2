@@ -1,6 +1,7 @@
 package com.stu25956.assign2_25956
 
 import android.annotation.SuppressLint
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -68,7 +69,12 @@ fun Home(navController: NavController) {
         LazyColumn(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.padding(top = 75.dp, start = 5.dp, end = 5.dp, bottom = 85.dp)
+            modifier = Modifier
+                .background(Color.Black)
+                .padding(top = 73.dp,
+                    start = 5.dp,
+                    end = 5.dp,
+                    bottom = 85.dp)
         ) {
             this.items(
                 items = movies,

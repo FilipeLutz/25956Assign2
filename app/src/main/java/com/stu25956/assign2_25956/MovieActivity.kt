@@ -1,6 +1,7 @@
 package com.stu25956.assign2_25956
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -52,7 +53,8 @@ fun MovieList(movie: Movie, navController: NavController) {
             },
         shape = RoundedCornerShape(corner = CornerSize(12.dp))
     ) {
-        Row {
+        Row (modifier = Modifier
+            .background(Color.DarkGray)){
             Image(movie)
             Column(
                 modifier = Modifier
@@ -65,13 +67,14 @@ fun MovieList(movie: Movie, navController: NavController) {
                         text = movie.name,
                         style = MaterialTheme.typography.titleMedium,
                         fontFamily = FontFamily.Default,
-                        fontWeight = FontWeight.Bold
+                        fontWeight = FontWeight.Bold,
+                        color = Color.LightGray
                     )
 
                     Spacer(modifier = Modifier.width(7.dp))
 
                     Image(
-                        modifier = Modifier.padding(top = 2.dp),
+                        modifier = Modifier.padding(top = 4.dp),
                         painter = painterResource(movie.certification),
                         contentDescription = null
                     )
@@ -84,7 +87,7 @@ fun MovieList(movie: Movie, navController: NavController) {
                     style = MaterialTheme.typography.bodySmall,
                     fontFamily = FontFamily.SansSerif,
                     fontWeight = FontWeight.SemiBold,
-                    color = Color.Gray)
+                    color = Color.Black)
 
                 Spacer(modifier = Modifier.height(6.dp))
 
