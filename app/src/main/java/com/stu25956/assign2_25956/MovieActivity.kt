@@ -96,7 +96,7 @@ fun MovieList(movie: Movie, navController: NavController) {
                     Text(text = movie.seatsSelected.toString() + " Seats selected",
                         style = MaterialTheme.typography.bodyMedium,
                         fontFamily = FontFamily.SansSerif,
-                        color = Color.Black
+                        color = Color.Green
                     )
                 }
                 else {
