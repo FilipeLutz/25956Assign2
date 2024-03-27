@@ -68,7 +68,7 @@ fun MovieList(movie: Movie, navController: NavController) {
                         style = MaterialTheme.typography.titleMedium,
                         fontFamily = FontFamily.Default,
                         fontWeight = FontWeight.Bold,
-                        color = Color.LightGray
+                        color = Color.White
                     )
 
                     Spacer(modifier = Modifier.width(7.dp))
@@ -87,7 +87,7 @@ fun MovieList(movie: Movie, navController: NavController) {
                     style = MaterialTheme.typography.bodySmall,
                     fontFamily = FontFamily.SansSerif,
                     fontWeight = FontWeight.SemiBold,
-                    color = Color.Black)
+                    color = Color.LightGray)
 
                 Spacer(modifier = Modifier.height(6.dp))
 
