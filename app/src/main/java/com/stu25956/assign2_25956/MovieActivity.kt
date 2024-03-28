@@ -31,7 +31,7 @@ import androidx.navigation.NavController
 @Composable
 private fun Image(movie: Movie) {
     Image(
-        painter = painterResource(id = movie.image),
+        painter = painterResource(movie.image),
         contentDescription = null,
         contentScale = ContentScale.Crop,
         modifier = Modifier
@@ -61,7 +61,6 @@ fun MovieList(movie: Movie, navController: NavController) {
                     .padding(top = (15.dp), end = 5.dp)
                     .fillMaxWidth(),
                 verticalArrangement = Arrangement.SpaceEvenly) {
-
                 Row {
                     Text(
                         text = movie.name,

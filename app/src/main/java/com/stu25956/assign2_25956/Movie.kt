@@ -2,7 +2,7 @@ package com.stu25956.assign2_25956
 
 // Movie class as the structure specified in Movie.json
 data class Movie(
-    var image: Int,
+    var image: Int, //String,
     var name: String,
     var certification: Int,
     var description: String,
@@ -11,7 +11,7 @@ data class Movie(
     var seatsRemaining: Int,
     var seatsSelected: Int,
     var id: Int
-) {
+) /*{
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
@@ -44,3 +44,4 @@ data class Movie(
         return result
     }
 }
+*/
