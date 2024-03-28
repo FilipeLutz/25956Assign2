@@ -32,7 +32,7 @@ class MainActivity : ComponentActivity() {
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun HomePreview() {
     Assign2_25956Theme {
         Navigation()
     }

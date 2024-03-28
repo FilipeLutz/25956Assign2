@@ -17,7 +17,7 @@ object MoviesData {
             id = 0,
         ),
         Movie(
-            name = "GHOSTBUSTERS",
+            name = "GHOSTBUSTERS: FROZEN EMPIRE",
             image = "https://www.myvue.com/-/media/vuecinemas/film-and-events/feb-2024/ghostbusters-poster.jpg?rev=890c7016efc4412293629c8d63844732", //R.drawable.ghostbusters_poster,
             certification = "https://www.myvue.com/-/media/vuecinemas/img/certificates/ie/12a.png?rev=d1b78b8f625a43b098703bf1bf397269", //R.drawable.cert_12a,
             description = "In Ghostbusters: Frozen Empire, the Spengler family returns to where it all started – the iconic New York City firehouse – " +
@@ -45,8 +45,7 @@ object MoviesData {
             name = "IMAGINARY",
             image = "https://www.myvue.com/-/media/vuecinemas/img/import/f607e5c8-c8db-4dbb-92d0-dad9ab8c68c3_imaginary_posters_imaginary_1sheet_686x1016_712px.jpg?rev=795a2eed0ad641b297101bd70e72eca7", //R.drawable.imaginary_poster,
             certification = "https://www.myvue.com/-/media/vuecinemas/img/certificates/ie/15a.png?rev=fd3786da538c4502b4e4c02ea3c7b44e", //R.drawable.cert_15a,
-            description = "From Blumhouse, the genre-defining masterminds behind FIVE NIGHTS AT FREDDY’S and M3GAN. " +
-                    "When Jessica (DeWanda Wise) moves back into her childhood home with her family, her youngest stepdaughter Alice (Pyper Braun) develops an eerie attachment" +
+            description = "When Jessica (DeWanda Wise) moves back into her childhood home with her family, her youngest stepdaughter Alice (Pyper Braun) develops an eerie attachment" +
                     " to a stuffed bear named Chauncey she finds in the basement.\n",
             starring = arrayOf("Betty Buckley,", "DeWanda Wise,", "Tom Payne"),
             runningTimeMins = 104,
@@ -70,13 +69,12 @@ object MoviesData {
             name = "BOB MARLEY: ONE LOVE",
             image = "https://www.myvue.com/-/media/vuecinemas/img/import/bob-marley-one-love_posters_bmol_intl_dgtl_teaser_1sheet_2025x3000_spotlight_uk_712px.jpg?rev=1fb201cf08754f18b77f98fd4f28ed4b", //R.drawable.bob_poster,
             certification = "https://www.myvue.com/-/media/vuecinemas/img/certificates/ie/12a.png?rev=d1b78b8f625a43b098703bf1bf397269", //R.drawable.cert_12a,
-            description = "BOB MARLEY: ONE LOVE celebrates the life and music of an icon who inspired generations through his message of love and unity. " +
-                    "On the big screen for the first time, discover Bob’s powerful story of overcoming adversity and the journey behind his revolutionary music.\n",
+            description = "BOB MARLEY: ONE LOVE celebrates the life and music of an icon who inspired generations through his message of love and unity.\n",
             starring = arrayOf("Lashana Lynch,", "Tosin Cole,", "Kingsley Ben-Adir,", "James Norton,", "Anthony Welsh"),
             runningTimeMins = 110,
             seatsRemaining = Random.nextInt(0, 16),
             seatsSelected = 0,
             id = 5
-        ),
+        )
     )
 }

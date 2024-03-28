@@ -4,7 +4,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -35,39 +34,35 @@ import coil.compose.rememberAsyncImagePainter
 
 @Composable
 fun MovieScreen(movie: Movie, navController: NavController) {
-
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(Color.Black)
-    ){
-
-        Box {
-
-        Image(
-            painter = painterResource(id = R.drawable.back_arrow),
-            contentDescription = "Back Arrow",
-            modifier = Modifier
-                .size(width = 55.dp, height = 38.dp)
-                .padding(6.dp)
-                .clickable {
-                    navController.navigate(Routes.FirstScreen.route)
-                }
+    ) {
+            Image(
+                painter = painterResource(id = R.drawable.back_arrow),
+                contentDescription = "Back Arrow",
+                modifier = Modifier
+                    .size(width = 55.dp, height = 38.dp)
+                    .padding(6.dp)
+                    .clickable {
+                        navController.navigate(Routes.FirstScreen.route)
+                    }
             )
+
+            Image(
+                painter = rememberAsyncImagePainter(movie.image),
+                contentDescription = "Movie Poster",
+                modifier = Modifier
+                    .fillMaxWidth(1f)
+                    .fillMaxHeight(0.8f),
+                contentScale = ContentScale.Crop
+            )
+
+            MBody(movie)
         }
-
-        Image(
-            painter = rememberAsyncImagePainter(movie.image),
-            contentDescription = "Movie Poster",
-            modifier = Modifier
-                .fillMaxWidth(1f)
-                .fillMaxHeight(0.56f),
-            contentScale = ContentScale.Crop
-        )
-
-        Bottom(movie)
     }
-}
+
 
 fun conv(movie: Movie) :String {
     var stares = ""
@@ -77,11 +72,11 @@ fun conv(movie: Movie) :String {
 }
 
 @Composable
-fun Bottom(movie: Movie) {
+fun MBody(movie: Movie) {
     var seatsSelected by remember { mutableIntStateOf(movie.seatsSelected) }
     var seatsRemaining by remember { mutableIntStateOf(movie.seatsRemaining) }
     Column(
-        verticalArrangement = Arrangement.Top,
+        verticalArrangement = Arrangement.SpaceEvenly,
         modifier = Modifier
             .fillMaxSize()
             .padding(20.dp),
@@ -90,7 +85,7 @@ fun Bottom(movie: Movie) {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                text = movie.name,
+                text = movie.name.take(21),
                 style = MaterialTheme.typography.titleLarge,
                 color = Color.White,
                 fontFamily = FontFamily.SansSerif,
@@ -106,7 +101,7 @@ fun Bottom(movie: Movie) {
                     .size(25.dp))
         }
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         Row {
 
