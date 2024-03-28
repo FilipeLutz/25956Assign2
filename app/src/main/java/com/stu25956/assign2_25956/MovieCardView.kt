@@ -29,6 +29,12 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
 
+/**
+ * A composable function that displays a card item for a movie.
+ *
+ * @param movie The movie data to be displayed.
+ * @param navController The NavController used for navigation.
+ */
 @Composable
 fun CardItems(movie: Movie, navController: NavController) {
     Card(
@@ -36,6 +42,7 @@ fun CardItems(movie: Movie, navController: NavController) {
             .padding(5.dp)
             .fillMaxSize()
             .clickable {
+                // Navigate to the second screen with the movie id as a parameter
                 navController.navigate(Routes.SecondScreen.route + "/" + movie.id)
             },
         shape = RoundedCornerShape(corner = CornerSize(12.dp)),
@@ -47,6 +54,7 @@ fun CardItems(movie: Movie, navController: NavController) {
             verticalArrangement = Arrangement.spacedBy(4.dp)
         ) {
 
+            // Display the movie image
             Image(movie)
 
             Spacer(modifier = Modifier.width(1.dp))
@@ -58,6 +66,7 @@ fun CardItems(movie: Movie, navController: NavController) {
                     .fillMaxWidth()
                     .padding(start = 5.dp, end = 5.dp)
             ) {
+                // Display the movie name
                 Text(
                     text = movie.name.take(14),
                     style = MaterialTheme.typography.titleMedium,
@@ -65,6 +74,7 @@ fun CardItems(movie: Movie, navController: NavController) {
                     color = Color.White,
                 )
 
+                // Display the movie certification
                 Image(
                     modifier = Modifier.size(22.dp),
                     painter = rememberAsyncImagePainter(model = movie.certification),
@@ -72,6 +82,7 @@ fun CardItems(movie: Movie, navController: NavController) {
                 )
             }
 
+            // Display the movie runtime
             Text(
                 text = "Run Time: ${movie.runningTimeMins / 60}hr ${movie.runningTimeMins % 60}mins",
                 style = MaterialTheme.typography.bodySmall,
@@ -82,6 +93,7 @@ fun CardItems(movie: Movie, navController: NavController) {
                     .padding(start = 5.dp, end = 5.dp)
             )
 
+            // Display the number of seats selected or remaining
             if (movie.seatsSelected > 0) {
                 Text(
                     text = "${movie.seatsSelected} SEATS SELECTED",
@@ -109,6 +121,11 @@ fun CardItems(movie: Movie, navController: NavController) {
     }
 }
 
+/**
+ * A private composable function that displays an image for a movie.
+ *
+ * @param movie The movie data to be displayed.
+ */
 @Composable
 private fun Image(movie: Movie) {
     Image(

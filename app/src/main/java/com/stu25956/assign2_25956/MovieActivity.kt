@@ -38,11 +38,19 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
 
+/**
+ * This is the main screen for a specific movie.
+ * It displays the movie details and allows the user to select seats for the movie.
+ * @param movie The movie object containing all the details of the movie.
+ * @param navController The NavController used for navigation between different screens.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun MovieScreen(movie: Movie, navController: NavController) {
+fun MovieActivity(movie: Movie, navController: NavController) {
+    // Scaffold container for other Composable widgets.
     Scaffold(
+        // TopAppBar container for the top app bar.
         topBar = {
             TopAppBar(
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -63,6 +71,7 @@ fun MovieScreen(movie: Movie, navController: NavController) {
                 },
             )
         },
+        // The main content of the screen.
         content = {
             LazyColumn(
                 modifier = Modifier
@@ -88,6 +97,11 @@ fun MovieScreen(movie: Movie, navController: NavController) {
     )
 }
 
+/**
+ * This function converts the list of starring actors in the movie to a string.
+ * @param movie The movie object.
+ * @return A string containing the names of the starring actors.
+ */
 fun conv(movie: Movie) :String {
     var stares = ""
     for (i in movie.starring)
@@ -95,6 +109,11 @@ fun conv(movie: Movie) :String {
     return stares
 }
 
+/**
+ * This Composable function displays the main body of the movie screen.
+ * It includes the movie details and the seat selection functionality.
+ * @param movie The movie object.
+ */
 @Composable
 fun MBody(movie: Movie) {
     var seatsSelected by remember { mutableIntStateOf(movie.seatsSelected) }

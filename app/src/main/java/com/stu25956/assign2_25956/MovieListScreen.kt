@@ -26,14 +26,22 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 
+/**
+ * This is a Composable function that represents the Home screen of the application.
+ *
+ * @param navController The NavController that this function uses to navigate between different screens.
+ */
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Home(navController: NavController) {
 
+    // Remember the list of movies
     val movies = remember { MovieList.movieList }
 
+    // Scaffold that represents the Home screen
     Scaffold(
+        // TopAppBar of the Home screen
         topBar = {
             TopAppBar(
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -53,6 +61,7 @@ fun Home(navController: NavController) {
             )
         },
 
+        // BottomAppBar of the Home screen
         bottomBar = {
             BottomAppBar(
                 containerColor = MaterialTheme.colorScheme.primary,
@@ -74,8 +83,9 @@ fun Home(navController: NavController) {
         },
 
     ) {
+        // LazyVerticalGrid that displays the list of movies
         LazyVerticalGrid(
-            GridCells.Fixed(2), // Change the number of columns as needed
+            GridCells.Fixed(2),
             contentPadding = PaddingValues(horizontal = 5.dp, vertical = 5.dp),
             modifier = Modifier
                 .background(Color.Black)
@@ -83,6 +93,7 @@ fun Home(navController: NavController) {
                     bottom = 80.dp)
 
         ) {
+            // items is a DSL function that places the given items into the grid.
             items(movies) { movie ->
                 CardItems(movie = movie, navController = navController)
             }
