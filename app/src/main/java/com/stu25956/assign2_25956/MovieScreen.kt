@@ -28,14 +28,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextDecoration
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.stu25956.assign2_25956.ui.theme.Assign2_25956Theme
+import coil.compose.rememberAsyncImagePainter
 
 @Composable
 fun MovieScreen(movie: Movie, navController: NavController) {
@@ -61,7 +57,7 @@ fun MovieScreen(movie: Movie, navController: NavController) {
         }
 
         Image(
-            painter = painterResource(id = movie.image) ,
+            painter = rememberAsyncImagePainter(movie.image),
             contentDescription = "Movie Poster",
             modifier = Modifier
                 .fillMaxWidth(1f)
@@ -103,10 +99,11 @@ fun Bottom(movie: Movie) {
 
             Spacer(modifier = Modifier.width(15.dp))
 
-            Image(painter = painterResource(id = movie.certification) ,
+            Image(
+                painter = rememberAsyncImagePainter(movie.certification) ,
                 contentDescription = "Movie Certification",
                 modifier = Modifier
-                    .size(width = 25.dp, height = 25.dp))
+                    .size(25.dp))
         }
 
         Spacer(modifier = Modifier.height(20.dp))

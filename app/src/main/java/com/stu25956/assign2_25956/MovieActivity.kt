@@ -22,17 +22,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import coil.compose.rememberAsyncImagePainter
 
 @Composable
 private fun Image(movie: Movie) {
     Image(
-        painter = painterResource(movie.image),
-        contentDescription = null,
+        painter = rememberAsyncImagePainter(movie.image),
+        contentDescription = "Movie Poster",
         contentScale = ContentScale.Crop,
         modifier = Modifier
             .padding(8.dp)
@@ -70,12 +70,14 @@ fun MovieList(movie: Movie, navController: NavController) {
                         color = Color.White
                     )
 
-                    Spacer(modifier = Modifier.width(7.dp))
+                    Spacer(modifier = Modifier.width(10.dp))
 
                     Image(
-                        modifier = Modifier.padding(top = 4.dp),
-                        painter = painterResource(movie.certification),
-                        contentDescription = null
+                        modifier = Modifier
+                            .size(22.dp)
+                            .padding(top = 3.dp),
+                        painter = rememberAsyncImagePainter(movie.certification),
+                        contentDescription = "Movie Certification",
                     )
                 }
 
