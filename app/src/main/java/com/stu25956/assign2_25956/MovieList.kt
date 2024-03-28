@@ -2,7 +2,7 @@ package com.stu25956.assign2_25956
 
 import kotlin.random.Random
 
-object MoviesData {
+object MovieList {
     val movieList = listOf(
         Movie(
             name = "DUNE: PART TWO",

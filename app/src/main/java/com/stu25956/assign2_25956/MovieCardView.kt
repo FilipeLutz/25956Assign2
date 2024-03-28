@@ -84,8 +84,9 @@ fun CardItems(movie: Movie, navController: NavController) {
 
             if (movie.seatsSelected > 0) {
                 Text(
-                    text = "${movie.seatsSelected} Seats selected",
+                    text = "${movie.seatsSelected} SEATS SELECTED",
                     style = MaterialTheme.typography.bodyMedium,
+                    fontWeight = FontWeight.SemiBold,
                     color = Color.Green,
                     modifier = Modifier
                         .fillMaxWidth()
@@ -95,8 +96,9 @@ fun CardItems(movie: Movie, navController: NavController) {
 
             else {
                 Text(
-                    text = "${movie.seatsRemaining} Seats remaining",
+                    text = "${movie.seatsRemaining} SEATS REMAINING",
                     style = MaterialTheme.typography.bodyMedium,
+                    fontWeight = FontWeight.SemiBold,
                     color = Color.Red,
                     modifier = Modifier
                         .fillMaxWidth()

@@ -23,7 +23,7 @@ fun Navigation() {
             var id = 1
             if(arg != null)
                 id = arg.toInt()
-            val movie = MoviesData.movieList.find { it.id == id}
+            val movie = MovieList.movieList.find { it.id == id}
             if(movie != null)
                 MovieScreen(movie,navController = navController)
         }

@@ -31,7 +31,7 @@ import androidx.navigation.NavController
 @Composable
 fun Home(navController: NavController) {
 
-    val movies = remember { MoviesData.movieList }
+    val movies = remember { MovieList.movieList }
 
     Scaffold(
         topBar = {
