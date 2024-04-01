@@ -1,7 +1,7 @@
 # Movie Booking App <br />
 
 Filipe Lutz Mariano <br />
-student n°25956 <br />
+Student n°: 25956 <br />
 
 # Requirements <br />
 
