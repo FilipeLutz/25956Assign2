@@ -5,6 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -34,6 +35,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
@@ -272,7 +274,7 @@ fun MBody(movie: Movie) {
                 Image(
                     painter = painterResource(id = R.drawable.seat),
                     colorFilter = if (seatsRemaining == 0) ColorFilter.tint(Color.Red)
-                    else if (seatsSelected > 0) ColorFilter.tint(Color.Yellow)
+                    else if (seatsRemaining < 4) ColorFilter.tint(Color.Yellow)
                     else ColorFilter.tint(Color.LightGray),
                     contentDescription = "Seat",
                     modifier = Modifier
@@ -284,7 +286,7 @@ fun MBody(movie: Movie) {
                 Text(
                     text = "$seatsRemaining  Seats remaining",
                     color = if (seatsRemaining == 0) Color.Red
-                    else if (seatsSelected > 0) Color.Yellow
+                    else if (seatsRemaining < 4) Color.Yellow
                     else Color.LightGray,
                     fontWeight = FontWeight.Bold,
                     style = MaterialTheme.typography.headlineMedium
@@ -292,6 +294,43 @@ fun MBody(movie: Movie) {
             }
 
             Spacer(modifier = Modifier.height(10.dp))
+
+            // Check for seats remaining and add "filling fast" badge conditionally
+            if (seatsRemaining == 3 || seatsRemaining in 1..2) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        text = "FILLING FAST!",
+                        textAlign = TextAlign.Center,
+                        color = Color.Yellow,
+                        style = MaterialTheme.typography.headlineSmall,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(color = Color.Red)
+                    )
+                }
+            }
+
+            if (seatsRemaining == 0) {
+                Box{
+                    Text(
+                        text = "SOLD OUT!",
+                        textAlign = TextAlign.Center,
+                        color = Color.Black,
+                        style = MaterialTheme.typography.headlineSmall,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(color = Color.Red)
+                    )
+                }
+            }
+
+            Spacer(modifier = Modifier.height(30.dp))
         }
     }
 }
