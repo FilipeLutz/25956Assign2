@@ -1,6 +1,11 @@
 package com.stu25956.assign2_25956
 
 /**
+ * CA2 - Movie Booking App
+ * Filipe Lutz Mariano 25956
+ */
+
+/**
  * Movie class as the structure specified in Movie.json
  *
  * @property image A string representing the image of the movie.

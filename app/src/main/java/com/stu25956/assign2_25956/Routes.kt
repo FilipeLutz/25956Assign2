@@ -1,5 +1,10 @@
 package com.stu25956.assign2_25956
 
+/**
+ * CA2 - Movie Booking App
+ * Filipe Lutz Mariano 25956
+ */
+
 sealed class Routes(val route: String) {
     /**
      * This is an object that represents the first screen in the navigation graph.

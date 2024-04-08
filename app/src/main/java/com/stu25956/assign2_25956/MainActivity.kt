@@ -1,5 +1,10 @@
 package com.stu25956.assign2_25956
 
+/**
+ * CA2 - Movie Booking App
+ * Filipe Lutz Mariano 25956
+ */
+
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent

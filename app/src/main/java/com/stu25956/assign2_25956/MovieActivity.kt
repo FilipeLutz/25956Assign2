@@ -1,5 +1,10 @@
 package com.stu25956.assign2_25956
 
+/**
+ * CA2 - Movie Booking App
+ * Filipe Lutz Mariano 25956
+ */
+
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -91,6 +96,7 @@ fun MovieActivity(movie: Movie, navController: NavController) {
                     )
                 }
 
+                // Display the main body of the movie screen.
                 item {
                     MBody(movie)
                 }
@@ -264,6 +270,7 @@ fun MBody(movie: Movie) {
 
             Spacer(modifier = Modifier.height(10.dp))
 
+            // Display the number of seats remaining and the "filling fast" badge conditionally.
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.Start,
@@ -295,7 +302,7 @@ fun MBody(movie: Movie) {
 
             Spacer(modifier = Modifier.height(10.dp))
 
-            // Check for seats remaining and add "filling fast" badge conditionally
+            // "filling fast" badge conditionally
             if (seatsRemaining == 3 || seatsRemaining in 1..2) {
                 Box(
                     modifier = Modifier
