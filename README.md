@@ -33,9 +33,9 @@ Student n°: 25956. <br />
 
 Conceptually, every line of code in this project was written based on official documentation:
 
-    Android Developers Docs: https://developer.android.com/docs
-    Kotlin Docs: https://kotlinlang.org/docs/home.html
-    Material Design: https://material.io/
+  * Android Developers Docs: https://developer.android.com/docs <br />
+  * Kotlin Docs: https://kotlinlang.org/docs/home.html <br />
+  * Material Design: https://material.io/ <br />
 
 A special amount of inspiration was drawn from ANDROID BASICS IN KOTLIN, Unit 4: Connect to the internet (https://developer.android.com/courses/android-basics-kotlin/unit-4).
 
