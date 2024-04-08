@@ -1,7 +1,7 @@
 # Movie Booking App <br />
 
 Filipe Lutz Mariano <br />
-Student n°: 25956 <br />
+Student n°: 25956. <br />
 
 # Requirements <br />
 
@@ -27,7 +27,17 @@ Student n°: 25956 <br />
 
 ✅ 3.1. Add "filling fast" badge if less than 3 seats remaining <br />
 ❌ 3.2. Use "Roboto Condensed" font to replicate same style  <br />
-✅ 3.3. Use original movie images from myvue.com or your favourite provider (Hint: check get_movie_image_url.gif) <br />
+✅ 3.3. Use original movie images from myvue.com or your favourite provider (Hint: check get_movie_image_url.gif). <br />
+
+# References
+
+Conceptually, every line of code in this project was written based on official documentation:
+
+    Android Developers Docs: https://developer.android.com/docs
+    Kotlin Docs: https://kotlinlang.org/docs/home.html
+    Material Design: https://material.io/
+
+A special amount of inspiration was drawn from ANDROID BASICS IN KOTLIN, Unit 4: Connect to the internet (https://developer.android.com/courses/android-basics-kotlin/unit-4).
 
 # Copyright Disclaimer
 
