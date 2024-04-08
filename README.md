@@ -28,3 +28,9 @@ Student n°: 25956 <br />
 ✅ 3.1. Add "filling fast" badge if less than 3 seats remaining <br />
 ❌ 3.2. Use "Roboto Condensed" font to replicate same style  <br />
 ✅ 3.3. Use original movie images from myvue.com or your favourite provider (Hint: check get_movie_image_url.gif) <br />
+
+# Copyright Disclaimer
+
+This project may feature content that is copyright protected. Please, keep in mind this is an student project and has no commercial purpose whatsoever. Having said that, if you are the owner of any content featured here and would like for it to be removed, please, contact me and I will do so promptly. Thank you!
+
+
