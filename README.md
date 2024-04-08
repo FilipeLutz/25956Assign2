@@ -29,6 +29,12 @@ Student n°: 25956. <br />
 ❌ 3.2. Use "Roboto Condensed" font to replicate same style  <br />
 ✅ 3.3. Use original movie images from myvue.com or your favourite provider (Hint: check get_movie_image_url.gif). <br />
 
+# Report:
+
+[Assign2_25956_Report.pdf](https://github.com/FilipeLutz/Assign2_25956/Assign2_25956_Report.pdf)
+
+
+
 # References
 
 Conceptually, every line of code in this project was written based on official documentation:
