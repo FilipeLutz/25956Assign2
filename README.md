@@ -31,7 +31,7 @@ Student n°: 25956. <br />
 
 # Report:
 
-[Assign2_25956_Report.pdf](https://github.com/FilipeLutz/Assign2_25956/Assign2_25956_Report.pdf)
+[Assign2_25956_Report.pdf](https://github.com/FilipeLutz/Assign2_25956/blob/main/Assign2_25956_Report.pdf)
 
 
 
