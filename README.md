@@ -31,13 +31,14 @@ Student n°: 25956. <br />
 
 # References
 
-Conceptually, every line of code in this project was written based on official documentation:
+The development process of this project was guided by official documentation and resources, including:
 
   * Android Developers Docs: https://developer.android.com/docs <br />
   * Kotlin Docs: https://kotlinlang.org/docs/home.html <br />
   * Material Design: https://material.io/ <br />
+  * YouTube: https://www.youtube.com/watch?v=XieUfEG9mBI <br />
 
-A special amount of inspiration was drawn from ANDROID BASICS IN KOTLIN, Unit 4: Connect to the internet (https://developer.android.com/courses/android-basics-kotlin/unit-4).
+Additionally, inspiration and insights were drawn from the ANDROID BASICS IN KOTLIN, Unit 4: Connect to the internet (https://developer.android.com/courses/android-basics-kotlin/unit-4).
 
 # Copyright Disclaimer
 
