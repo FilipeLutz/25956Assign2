@@ -38,7 +38,7 @@ The development process of this project was guided by official documentation and
   * Material Design: https://material.io/ <br />
   * YouTube: https://www.youtube.com/watch?v=XieUfEG9mBI <br />
 
-Additionally, inspiration and insights were drawn from the ANDROID BASICS IN KOTLIN, Unit 4: Connect to the internet (https://developer.android.com/courses/android-basics-kotlin/unit-4).
+Additionally, inspiration and insights were drawn from the ANDROID BASICS IN KOTLIN, Unit 4: Connect to the internet: https://developer.android.com/courses/android-basics-kotlin/unit-4
 
 # Copyright Disclaimer
 
